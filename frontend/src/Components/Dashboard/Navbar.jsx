@@ -9,7 +9,7 @@ const NavigationBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand Link to="/" className="mr-3">
+        <Navbar.Brand href="/" className="mr-3">
           Travel Asia {user && user.role == "Admin" && "(Admin)"}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -19,8 +19,7 @@ const NavigationBar = () => {
         >
           <Nav className="mr-auto">
             <Nav.Link
-              Link
-              to={
+              href={
                 user && user.role == "Admin"
                   ? "/admin/travel-guides"
                   : "/travel-guides"
@@ -32,8 +31,7 @@ const NavigationBar = () => {
               Travel Guides
             </Nav.Link>
             <Nav.Link
-              Link
-              to={user && user.role == "Admin" ? "/admin/events" : "/events"}
+              href={user && user.role == "Admin" ? "/admin/events" : "/events"}
               style={{
                 marginRight: "20px",
               }}
@@ -41,8 +39,7 @@ const NavigationBar = () => {
               Events
             </Nav.Link>
             <Nav.Link
-              Link
-              to={user && user.role == "Admin" ? "/admin/blogs" : "/blogs"}
+              href={user && user.role == "Admin" ? "/admin/blogs" : "/blogs"}
               style={{
                 marginRight: "20px",
               }}
@@ -50,8 +47,7 @@ const NavigationBar = () => {
               Blogs
             </Nav.Link>
             <Nav.Link
-              Link
-              to={user && user.role == "Admin" ? "/admin/shop" : "/shop"}
+              href={user && user.role == "Admin" ? "/admin/shop" : "/shop"}
               style={{
                 marginRight: "20px",
               }}
@@ -60,8 +56,7 @@ const NavigationBar = () => {
             </Nav.Link>
             {user && user.role != "Admin" ? (
               <Nav.Link
-                Link
-                to="/cart"
+                href="/cart"
                 style={{
                   marginRight: "20px",
                 }}
@@ -74,12 +69,8 @@ const NavigationBar = () => {
           </Nav>
           {!user && (
             <Nav className="ml-auto">
-              <Nav.Link Link to="/signup">
-                Sign Up
-              </Nav.Link>
-              <Nav.Link Link to="/login">
-                Sign In
-              </Nav.Link>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Sign In</Nav.Link>
             </Nav>
           )}
 
